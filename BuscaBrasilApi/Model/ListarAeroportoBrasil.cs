@@ -1,4 +1,6 @@
-﻿namespace BuscaBrasilApi.Model
+﻿using Microsoft.AspNetCore.Http;
+
+namespace BuscaBrasilApi.Model
 {
 
     public class ListarAeroportoBrasil
@@ -15,6 +17,15 @@
             lat = 0;
             lon = 0;
             tz = string.Empty;
+            message = string.Empty;
+
+            //ERROR
+
+            content = string.Empty;
+            tipoPesquisa = string.Empty;
+            StatusCode = string.Empty;
+            responseUri = string.Empty;
+
         }
 
         public string icao { get; set; }
@@ -27,8 +38,13 @@
         public float lat { get; set; }
         public float lon { get; set; }
         public string tz { get; set; }
-    }
+        public string message { get; set; }
 
-    
+        //ERROR
+        public string content { get; set; }
+        public string tipoPesquisa { get; set; }
+        public string StatusCode { get; set; }
+        public string responseUri { get; set; }
+    }    
 
 }

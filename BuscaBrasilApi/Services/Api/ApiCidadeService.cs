@@ -30,7 +30,7 @@ namespace BuscaBrasilApi.Services.Api
                 };
 
                 RestClient client = new RestClient(options);
-                var request = new RestRequest($"api/cptec/v1/cidad")
+                var request = new RestRequest($"api/cptec/v1/cidade")
                     .AddHeader("Accept", "application/json; charset=utf-8");
 
                 response = await client.GetAsync(request);

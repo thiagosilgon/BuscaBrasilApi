@@ -36,6 +36,7 @@
   <PropertyGroup>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <NoWarn>$(NoWarn);1591</NoWarn>
+    <StartupObject>BuscaBrasilApi.Program</StartupObject>
   </PropertyGroup>
 
 </Project>

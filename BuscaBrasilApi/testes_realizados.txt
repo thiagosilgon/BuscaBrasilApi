@@ -1,0 +1,44 @@
+TESTES UNITARIOS
+
+Listar cidades
+=====================
+ok
+listar cidades com o endpoint completo e correto
+
+não ok
+listar cidade com o endpoint faltando alguma letra (notfound) ou incorreto
+
+consultar condições climáticas por ID
+=====================
+ok
+Consultar com o ID correto
+
+não ok
+Consultar com o campo do ID incorreto (menos de 4 caracteres)
+não ok
+Consultar com o campo do ID incorreto (mais de 4 caracteres)
+não ok
+Consultar com o campo do ID incorreto (com 4 caracteres cod inexistente)
+
+
+
+
+Listar aeroportos
+=====================
+ok
+listar cidades com o endpoint completo e correto
+
+não ok
+listar cidade com o endpoint faltando alguma letra (notfound) ou incorreto
+
+consultar condições climáticas por ID
+=====================
+ok
+Consultar com o ID correto
+
+não ok
+Consultar com o campo do ID incorreto (menos de 4 caracteres)
+não ok
+Consultar com o campo do ID incorreto (mais de 4 caracteres)
+não ok
+Consultar com o campo do ID incorreto (com 4 caracteres cod inexistente)

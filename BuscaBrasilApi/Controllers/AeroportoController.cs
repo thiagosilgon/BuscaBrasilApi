@@ -41,14 +41,15 @@ namespace BuscaBrasilApi.Controllers
             List<ListarAeroportoBrasil> info_Json = new List<ListarAeroportoBrasil>();
 
             //Foi realizado via Json pois não consegui achar uma maneira de retornar todos os aeroportos com o codigo ICAO
-            string json = "airports_brazil.json"; 
-            string result_Json = System.IO.File.ReadAllText(json);
+            string json = "airports_brazil.json";
+            string result_Json = string.Empty;
 
-            if (result_Json != null)
+            try
             {
+                result_Json = System.IO.File.ReadAllText(json);
                 Console.WriteLine($"=================================================== \n INICIO PARA CONSULTAR LISTA DE AEROPORTOS\n===================================================");
 
-                
+
                 info_Json = JsonConvert.DeserializeObject<List<ListarAeroportoBrasil>>(result_Json);
                 Console.WriteLine(JsonConvert.SerializeObject(info_Json).ToString());
 
@@ -56,10 +57,10 @@ namespace BuscaBrasilApi.Controllers
                 _tipoPesquisa = "Listar todos os Aeroportos";
                 _StatusCode = "OK";
                 _responseUri = "Consulta interna Json";
-
             }
-            else
+            catch (Exception ex) 
             {
+                string message_error = string.Empty;
                 Console.WriteLine($"=================================================== \n ERRO PARA CONSULTAR LISTA DE AEROPORTOS - erro para retornar informações do json {result_Json}\n===================================================");
 
                 _content = "Ocorreu um erro para consultr a lista dos aeroportos";
@@ -67,6 +68,8 @@ namespace BuscaBrasilApi.Controllers
                 _StatusCode = "consulta interna Json: Erro ao consultar";
                 _responseUri = "Consulta interna Json: Erro ao consultar";
             }
+
+            
             GravarLog(_tipoPesquisa, _StatusCode, _responseUri, _content);
             return info_Json;
         }
