@@ -80,6 +80,10 @@ namespace BuscaBrasilApi.Controllers
             return Retorno_Lista_Cidade;
         }
 
+        /// <summary>
+        /// Consulta a condição climática da cidade referente ao codigo ID (4 números) informados)
+        /// </summary>
+
         [HttpGet]
         [Route("/api/cptec/v1/clima/previsao")]
         public async Task<BuscaClimaCidade> ConsultaClimaCidade([Required(ErrorMessage = "Campo obrigadtório")][FromQuery] int Codigo_ID_Cidade)
